@@ -1,0 +1,19 @@
+{
+  "name": "connecting-to-relational-database",
+  "version": "1.0.0",
+  "description": "This is a app for learning and practicing how to connect to relational databases in Node.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "~16.0.0",
+    "express": "~4.17.3",
+    "mysql2": "~2.3.3",
+    "pg": "^8.7.3"
+  }
+}
