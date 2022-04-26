@@ -1,3 +1,5 @@
+const { INVALID_URL_ERROR_MESSAGE } = require("./constants/constants");
+const ResourceNotFoundError = require("./errors/ResourceNotFoundError");
 require("dotenv").config();
 const express = require("express");
 const ApiError = require("./errors/ApiError");
@@ -24,6 +26,13 @@ app.use((req, res, next) => {
  * Handling routes for /sample
  */
 app.use("/sample", sampleRoutes);
+
+/**
+ * Default Route Handler.
+ */
+const defaultRouteHandler = (req, res, next) =>
+  next(new ResourceNotFoundError(INVALID_URL_ERROR_MESSAGE));
+app.use("/", defaultRouteHandler);
 
 /**
  * Global Error Handler
