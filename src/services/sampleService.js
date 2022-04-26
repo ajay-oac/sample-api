@@ -34,7 +34,6 @@ if (env === DEV_ENV) {
 const executeQuery = async (query, params = null) => {
   try {
     const db = await getDbConfig();
-    console.log("CAME IN HERE: ", db);
     const result = await db.query(query, params);
     db.end();
     return result;
